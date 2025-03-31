@@ -3,122 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Are you ready?</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            background-color: #140656;
-        }
-        
-        .container {
-            text-align: center;
-            background-color: #642CC4;
-            border-radius: 10px;
-            padding: 2rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            max-width: 600px;
-            width: 90%;
-        }
-        
-        .countdown {
-            display: flex;
-            justify-content: center;
-            margin: 2rem 0;
-        }
-        .time-segment {
-            margin: 0 1rem;
-            text-align: center;
-        }
-        
-        .time-value {
-            font-size: 3rem;
-            font-weight: bold;
-            color: #FB1494;
-        }
-        
-        .time-label {
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            margin-top: 0.5rem;
-            color: #44D4BC;
-        }
-    </style>
+    <script src="jquery-3.7.1.min.js"></script>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="index.css"></link>
+    <title>Cumming Soon</title>
 </head>
 <body>
-    <div class="container">        
-        <div class="countdown">
-            <div class="time-segment">
-                <div id="days" class="time-value">0</div>
-                <div class="time-label">Days</div>
+    <!--Main Content-->
+    <span id="main-content">
+		  <!-- Hero -->
+          <section class="et-hero-tabs">
+            <h1>Only UwUbens</h1>
+            <h3>100% Femboy Made</h3>
+            <div class="et-hero-tabs-container">
+              <a class="et-hero-tab" href="#tab-dawgwater">Dawg Water</a>
+              <a class="et-hero-tab" href="#tab-biggulps">Mix n' Mate</a>
+              <a class="et-hero-tab" href="#tab-react">About Us</a>
+              <a class="et-hero-tab" href="#tab-angular">Other Products</a>
+              <a class="et-hero-tab" href="#tab-other">Contact</a>
+              <span class="et-hero-tab-slider"></span>
             </div>
-            <div class="time-segment">
-                <div id="hours" class="time-value">0</div>
-                <div class="time-label">Hours</div>
-            </div>
-            <div class="time-segment">
-                <div id="minutes" class="time-value">0</div>
-                <div class="time-label">Minutes</div>
-            </div>
-            <div class="time-segment">
-                <div id="seconds" class="time-value">0</div>
-                <div class="time-label">Seconds</div>
+          </section>
+        
+          <!-- Main -->
+          <main class="et-main">
+            <section class="et-slide" id="tab-dawgwater">
+              <h1>Dawg Water</h1>
+              <h3>something about UwUben's famed wine</h3>
+            </section>
+            <section class="et-slide" id="tab-biggulps">
+              <h1>Big Gulps</h1>
+              <h3>Booze Recipes</h3>
+            </section>
+            <section class="et-slide" id="tab-react">
+              <h1>React</h1>
+              <h3>something about react</h3>
+            </section>
+            <section class="et-slide" id="tab-angular">
+              <h1>Angular</h1>
+              <h3>something about angular</h3>
+            </section>
+            <section class="et-slide" id="tab-other">
+              <h1>Contact Us</h1>
+              <h3>something about other</h3>
+            </section>
+          </main>
+    </span>
+
+    <!--Password Input-->
+    <span id="password-content">
+        <div class="container">
+            <input type="password" id="password" placeholder="Password">
+        </div>
+    </span>
+
+    <!--Countdown-->
+    <span id="countdown-content">
+        <div class="container">
+            <h1>Cumming Soon</h1>        
+            <div class="countdown">
+                <div class="time-segment">
+                    <div id="days" class="time-value">0</div>
+                    <div class="time-label">Days</div>
+                </div>
+                <div class="time-segment">
+                    <div id="hours" class="time-value">0</div>
+                    <div class="time-label">Hours</div>
+                </div>
+                <div class="time-segment">
+                    <div id="minutes" class="time-value">0</div>
+                    <div class="time-label">Minutes</div>
+                </div>
+                <div class="time-segment">
+                    <div id="seconds" class="time-value">0</div>
+                    <div class="time-label">Seconds</div>
+                </div>
             </div>
         </div>
-    </div>
-    
-    <script>
-        // DOM elements
-        const daysEl = document.getElementById('days');
-        const hoursEl = document.getElementById('hours');
-        const minutesEl = document.getElementById('minutes');
-        const secondsEl = document.getElementById('seconds');
-        
-        // HARDCODED TARGET DATE - Set this to your desired date and time
-        // Format: new Date(year, month-1, day, hour, minute, second)
-        // Note: Month is 0-indexed (0 = January, 11 = December)
-        const targetDate = new Date(2025, 3, 1, 10, 0, 0); // December 31, 2025 at 23:59:59
-        
-        // Display the target date in user-friendly format
-        //targetDateDisplay.textContent = targetDate.toLocaleString();
-        
-        function updateCountdown() {
-            const currentDate = new Date();
-            const totalSeconds = (targetDate - currentDate) / 1000;
-            
-            if (totalSeconds <= 0) {
-                // Countdown finished
-                daysEl.innerHTML = '0';
-                hoursEl.innerHTML = '0';
-                minutesEl.innerHTML = '0';
-                secondsEl.innerHTML = '0';
-                return;
-            }
-            
-            const days = Math.floor(totalSeconds / 3600 / 24);
-            const hours = Math.floor(totalSeconds / 3600) % 24;
-            const minutes = Math.floor(totalSeconds / 60) % 60;
-            const seconds = Math.floor(totalSeconds) % 60;
-            
-            daysEl.innerHTML = days;
-            hoursEl.innerHTML = formatTime(hours);
-            minutesEl.innerHTML = formatTime(minutes);
-            secondsEl.innerHTML = formatTime(seconds);
-        }
-        
-        function formatTime(time) {
-            return time < 10 ? `0${time}` : time;
-        }
-        
-        // Initial countdown update
-        updateCountdown();
-        
-        // Update countdown every second
-        setInterval(updateCountdown, 1000);
-    </script>
+    </span>
 </body>
 </html>

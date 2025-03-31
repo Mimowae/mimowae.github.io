@@ -1,0 +1,138 @@
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #140656;
+}
+
+.container {
+    text-align: center;
+    background-color: #642CC4;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 90%;
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+}
+.time-segment {
+    margin: 0 1rem;
+    text-align: center;
+}
+
+.time-value {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #FB1494;
+}
+
+.time-label {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    margin-top: 0.5rem;
+    color: #44D4BC;
+}
+
+#main-content {
+    width: 100%;
+}
+
+#countdown-content {
+    h1 {
+        color:#44D4BC;
+    }
+}
+
+#Password-content {
+    h1 {
+        color:#44D4BC;
+    }
+}
+
+.et-hero-tabs,
+.et-slide {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+height: 100vh;
+position: relative;
+background: #140656;
+    text-align: center;
+    padding: 0 2em;
+h1 {
+    font-size: 2rem;
+    margin: 0;
+    letter-spacing: 1rem;
+}
+h3 {
+    font-size: 1rem;
+    letter-spacing: 0.3rem;
+    opacity: 0.6;
+}
+}
+
+.et-hero-tabs-container {
+display: flex;
+flex-direction: row;
+position: absolute;
+bottom: 0;
+width: 100%;
+height: 70px;
+box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+background: #642CC4;
+z-index: 10;
+}
+
+.et-hero-tabs-container--top {
+        position: fixed;
+        top: 0;
+}
+
+.et-hero-tab {
+display: flex;
+justify-content: center;
+align-items: center;
+flex: 1;
+color: #FB1494;
+letter-spacing: 0.1rem;
+    transition: all 0.5s ease;
+    font-size: 0.8rem;
+  &:hover {
+        color:white;
+  background: #44D4BC;
+        transition: all 0.5s ease;
+}
+}
+
+.et-hero-tab-slider {
+position: absolute;
+bottom: 0;
+width: 0;
+height: 6px;
+background: #66B1F1;
+transition: left 0.3s ease;
+}
+
+@media (min-width: 800px) {
+.et-hero-tabs,
+.et-slide {
+h1 {
+    font-size: 3rem;
+}
+h3 {
+    font-size: 1rem;
+}
+}
+.et-hero-tab {
+    font-size: 1rem;
+}
+}
