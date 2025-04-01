@@ -19,11 +19,11 @@ function init() {
     // Verify if the countdown should be displayed
     updateCountdown();
     // if no, hide the countdown and show the main content
-    if(doMainContent) {
+    /*if(doMainContent) {
         new StickyNavigation();
         showMainContent();
         
-    }
+    }*/
 }
 
 function updateCountdown() {

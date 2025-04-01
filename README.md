@@ -4,6 +4,9 @@ To Do:
 
 [X] Complete DNS setup
 [X] MVP webpage - countdown page to main product page w/ navigation transition
-[] Faux Product Photos
-[] Faux Content
+[] Content
+    [] Music?
+    [] Photos
+    [] Text Content/Articles
 [] Password page
+[] Optimizations
