@@ -5,7 +5,7 @@ try {
     var secondsEl;
     var currentDate;
     var doMainContent = false;
-    const targetDate = new Date(2025, 3, 1, 10, 0, 0); // April 1, 2025, 10:00 AM
+    const targetDate = new Date(2026, 3, 1, 8, 0, 0); // April 1, 2025, 8:00 AM
 // Once the page is fully loaded, run init
 window.onload = init;
 function init() {
@@ -19,11 +19,11 @@ function init() {
     // Verify if the countdown should be displayed
     updateCountdown();
     // if no, hide the countdown and show the main content
-    /*if(doMainContent) {
+    if(doMainContent) {
         new StickyNavigation();
         showMainContent();
         
-    }*/
+    }
 }
 
 function updateCountdown() {
